@@ -47,27 +47,27 @@ fun mix(a: Color, b: Color) = when (setOf(a, b)) {
     else -> throw Exception("Dirty color")
 }
 
-interface Expr
-class Num(val value: Int) : Expr
-class Sum(val left: Expr, val right: Expr) : Expr
-
-fun eval(expr: Expr): Int =
-        if (expr is Num) {
-            expr.value
-        } else if (expr is Sum) {
-            eval(expr.right) + eval(expr.left)
-        } else {
-            throw IllegalArgumentException("Unknown expression")
-        }
-
-fun eval2(e: Expr): Int = when (e) {
-    is Num ->
-        e.value
-    is Sum ->
-        eval2(e.left) + eval2(e.right)
-    else ->
-        throw IllegalArgumentException("Unknown expression")
-}
+//interface Expr
+//class Num(val value: Int) : Expr
+//class Sum(val left: Expr, val right: Expr) : Expr
+//
+//fun eval(expr: Expr): Int =
+//        if (expr is Num) {
+//            expr.value
+//        } else if (expr is Sum) {
+//            eval(expr.right) + eval(expr.left)
+//        } else {
+//            throw IllegalArgumentException("Unknown expression")
+//        }
+//
+//fun eval2(e: Expr): Int = when (e) {
+//    is Num ->
+//        e.value
+//    is Sum ->
+//        eval2(e.left) + eval2(e.right)
+//    else ->
+//        throw IllegalArgumentException("Unknown expression")
+//}
 
 fun recognize(c: Char) = when (c) {
     in 'a'..'z' -> "lower"
