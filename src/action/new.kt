@@ -12,5 +12,6 @@ open class Branch(val age: Date, val name: String) {
 class NewBranch() : Branch(age = Date(), name = "1") {
     override fun printHello(){
         print("new hello")
+        print("new hello")
     }
 }
